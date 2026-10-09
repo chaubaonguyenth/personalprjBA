@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="BA Portfolio tiếng Việt — Case study nâng cấp quy trình tiếp nhận và xử lý hồ sơ bảo hiểm." />
+<title>BA Portfolio | Insurance Claims</title>
+<style>
+:root{--navy:#14243b;--blue:#315efb;--sky:#eaf0ff;--ink:#1e293b;--muted:#64748b;--line:#e2e8f0;--bg:#f7f9fc;--white:#fff;--green:#138a62;--amber:#a16207;--shadow:0 12px 35px rgba(20,36,59,.08)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}a{color:inherit;text-decoration:none}.container{width:min(1160px,calc(100% - 40px));margin:auto}.nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}.nav-inner{height:70px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font-weight:850;letter-spacing:-.04em;color:var(--navy);font-size:1.15rem}.brand span{color:var(--blue)}.nav-links{display:flex;gap:20px;align-items:center;font-size:.9rem;color:#475569}.nav-links a:hover{color:var(--blue)}.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:12px;padding:12px 17px;font-weight:700;cursor:pointer;transition:.2s;font-size:.92rem}.btn-primary{background:var(--blue);color:white;box-shadow:0 7px 18px rgba(49,94,251,.2)}.btn-primary:hover{transform:translateY(-1px);background:#234ce5}.btn-secondary{background:white;color:var(--navy);border:1px solid var(--line)}.hero{padding:76px 0 60px;background:radial-gradient(circle at 85% 10%,#dce6ff 0,transparent 27%),linear-gradient(135deg,#fff 0%,#f4f7ff 100%)}.eyebrow{display:inline-flex;gap:8px;align-items:center;background:#eaf0ff;color:#234ce5;padding:7px 11px;border-radius:999px;font-size:.78rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}.hero h1{font-size:clamp(2.5rem,5vw,4.5rem);line-height:1.06;letter-spacing:-.055em;color:var(--navy);margin:20px 0}.hero h1 span{color:var(--blue)}.lead{font-size:1.12rem;color:#526178;max-width:650px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}.hero-note{font-size:.83rem;color:var(--muted);margin-top:17px}.visual-card{background:white;border:1px solid #e6ebf5;border-radius:24px;padding:22px;box-shadow:var(--shadow);transform:rotate(1deg)}.visual-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px}.dot{height:9px;width:9px;border-radius:50%;background:#21b783;display:inline-block;margin-right:6px}.mini-label{font-size:.78rem;color:var(--muted)}.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.stat{padding:15px;border:1px solid var(--line);border-radius:15px}.stat strong{font-size:1.4rem;display:block;color:var(--navy)}.progress{height:8px;background:#edf1f7;border-radius:20px;overflow:hidden;margin-top:12px}.progress span{display:block;height:100%;width:72%;background:var(--blue);border-radius:20px}.section{padding:70px 0}.section-white{background:white}.section-head{max-width:730px;margin-bottom:30px}.kicker{color:var(--blue);font-size:.78rem;font-weight:850;text-transform:uppercase;letter-spacing:.1em}.section h2{font-size:clamp(1.8rem,3vw,2.6rem);letter-spacing:-.04em;line-height:1.15;color:var(--navy);margin:10px 0 12px}.section-head p{color:var(--muted);margin:0}.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.card{background:white;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 4px 18px rgba(20,36,59,.025)}.card h3{margin:7px 0 8px;color:var(--navy);font-size:1.08rem}.card p{margin:0;color:var(--muted);font-size:.94rem}.iconbox{height:42px;width:42px;border-radius:13px;background:var(--sky);display:grid;place-items:center;font-size:1.25rem}.pill{display:inline-block;padding:5px 9px;border-radius:999px;background:#f1f5f9;color:#475569;font-size:.76rem;font-weight:750}.pill.blue{background:#eaf0ff;color:#234ce5}.pill.green{background:#e4f8ef;color:#08744f}.pill.amber{background:#fff4d8;color:#946200}.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:16px;background:white}table{width:100%;border-collapse:collapse;min-width:660px}th,td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--line);vertical-align:top;font-size:.91rem}th{background:#f8fafc;color:#475569;font-size:.78rem;text-transform:uppercase;letter-spacing:.04em}tr:last-child td{border-bottom:0}.callout{padding:17px 19px;border-radius:14px;background:#eef4ff;border:1px solid #d8e4ff;color:#30415f}.callout strong{color:var(--navy)}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px}.flow{display:flex;flex-direction:column;align-items:center;gap:8px}.flow-step{width:min(100%,520px);background:white;border:1px solid #dbe4f0;border-radius:13px;padding:13px 16px;text-align:center}.flow-step strong{display:block;color:var(--navy)}.flow-step small{color:var(--muted)}.arrow{color:#8da0bd;font-size:1.2rem;line-height:1}.branch{display:grid;grid-template-columns:1fr 1fr;gap:10px;width:min(100%,520px)}.branch div{padding:12px;border-radius:12px;font-size:.86rem;text-align:center}.bad{background:#fff1f0;border:1px solid #ffd8d4;color:#9f2d25}.good{background:#eafaf2;border:1px solid #c7f0d9;color:#08744f}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}.tab{border:1px solid var(--line);border-radius:10px;padding:9px 13px;background:white;color:#475569;cursor:pointer;font-weight:750}.tab.active{background:var(--navy);color:white;border-color:var(--navy)}.diagram-box{border:1px solid var(--line);border-radius:18px;padding:22px;background:#fbfcff}.usecase{display:grid;grid-template-columns:140px 1fr 140px;gap:10px;align-items:center;min-height:230px}.actor{display:grid;place-items:center;text-align:center;color:var(--navy);font-weight:750}.actor .person{font-size:2.4rem}.system-boundary{border:2px solid #b9c8e2;border-radius:15px;padding:16px;display:flex;flex-direction:column;gap:10px;position:relative}.system-boundary:before{content:"Hệ thống bảo hiểm";position:absolute;top:-13px;left:14px;background:#fbfcff;padding:0 7px;font-size:.78rem;color:var(--muted)}.usecase-oval{border:1px solid #9eb3d6;border-radius:999px;text-align:center;padding:10px;font-size:.84rem;background:white}.wireframe{max-width:410px;margin:auto;border:1px solid #d5dce8;border-radius:22px;padding:18px;background:white;box-shadow:var(--shadow)}.wf-head{display:flex;justify-content:space-between;align-items:center;padding-bottom:14px;border-bottom:1px solid var(--line);font-weight:800;color:var(--navy)}.field{margin-top:13px}.field label{display:block;font-size:.78rem;color:#64748b;margin-bottom:5px}.field input,.field select,.field textarea{width:100%;border:1px solid #d7deea;border-radius:9px;padding:10px;background:#fff;font:inherit;font-size:.88rem;color:var(--ink)}.field textarea{resize:vertical}.wf-btn{width:100%;margin-top:17px}.prototype-status{padding:12px;border-radius:10px;background:#f8fafc;color:#64748b;font-size:.84rem;margin-top:12px}.prototype-status.success{background:#eafaf2;color:#08744f}.prototype-status.error{background:#fff1f0;color:#9f2d25}.req-card{border-left:4px solid var(--blue)}.ac{padding-left:18px}.ac li{margin:7px 0;color:#475569}.tag-row{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.footer{background:var(--navy);color:white;padding:40px 0}.footer p{color:#c1ccdc;margin:8px 0}.footer-row{display:flex;justify-content:space-between;gap:25px;align-items:center}.small{font-size:.83rem;color:var(--muted)}.mobile-menu{display:none}
+@media(max-width:850px){.hero-grid,.grid-3,.grid-2,.two-col{grid-template-columns:1fr}.hero{padding-top:50px}.nav-links{display:none}.mobile-menu{display:inline-flex}.hero-grid{gap:28px}.usecase{grid-template-columns:1fr}.actor{padding:8px}.system-boundary{margin:8px 0}.footer-row{display:block}.section{padding:52px 0}}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#home">BA<span>.</span>PORTFOLIO</a>
+    <div class="nav-links">
+      <a href="#overview">Case Study</a><a href="#requirements">BRD / FRD</a><a href="#process">Workflow</a><a href="#design">Wireframe</a><a href="#stories">US & AC</a>
+    </div>
+    <a class="btn btn-secondary" href="#contact">Liên hệ</a>
+  </div>
+</nav>
+<header class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">✦ Business Analyst Portfolio · 01 Case Study</div>
+      <h1>Biến vấn đề kinh doanh thành <span>giải pháp rõ ràng.</span></h1>
+      <p class="lead">Portfolio mô phỏng dự án BA trong lĩnh vực bảo hiểm: nâng cấp quy trình tiếp nhận, thẩm định và theo dõi hồ sơ bồi thường — từ phân tích nghiệp vụ đến thiết kế trải nghiệm.</p>
+      <div class="actions"><a class="btn btn-primary" href="#overview">Khám phá case study ↗</a><a class="btn btn-secondary" href="#deliverables">Xem deliverables</a></div>
+      <p class="hero-note">Dự án giả lập phục vụ portfolio học tập và phỏng vấn; không đại diện cho dữ liệu của doanh nghiệp bảo hiểm thực tế.</p>
+    </div>
+    <div class="visual-card">
+      <div class="visual-top"><strong>Claims Overview</strong><span class="mini-label"><i class="dot"></i>Concept dashboard</span></div>
+      <div class="stat-grid">
+        <div class="stat"><span class="mini-label">Hồ sơ cần xử lý</span><strong>128</strong><span class="pill amber">Ví dụ minh họa</span></div>
+        <div class="stat"><span class="mini-label">Đang thẩm định</span><strong>42</strong><span class="pill blue">In progress</span></div>
+        <div class="stat"><span class="mini-label">Chờ bổ sung</span><strong>17</strong><span class="pill amber">Need documents</span></div>
+        <div class="stat"><span class="mini-label">Đã hoàn tất</span><strong>69</strong><span class="pill green">Completed</span></div>
+      </div>
+      <div style="margin-top:20px"><div style="display:flex;justify-content:space-between;font-size:.82rem"><span>Tiến độ xử lý minh họa</span><strong>72%</strong></div><div class="progress"><span></span></div></div>
+    </div>
+  </div>
+</header>
+
+<section class="section section-white" id="overview">
+ <div class="container">
+  <div class="section-head"><div class="kicker">01 / Project overview</div><h2>Case study: Nâng cấp quy trình xử lý hồ sơ bảo hiểm</h2><p>Mục tiêu là làm rõ vấn đề, thống nhất yêu cầu giữa các bên và thiết kế quy trình giúp hồ sơ được theo dõi nhất quán hơn.</p></div>
+  <div class="grid-3">
+   <article class="card"><div class="iconbox">🎯</div><h3>Business Goal</h3><p>Giảm thao tác thủ công, tăng khả năng theo dõi trạng thái hồ sơ và hạn chế hồ sơ thiếu thông tin.</p></article>
+   <article class="card"><div class="iconbox">👥</div><h3>Stakeholders</h3><p>Khách hàng, nhân viên tiếp nhận, chuyên viên thẩm định, quản lý nghiệp vụ, bộ phận chi trả và IT.</p></article>
+   <article class="card"><div class="iconbox">🧩</div><h3>BA Responsibilities</h3><p>Phân tích AS-IS/TO-BE, thu thập yêu cầu, mô hình hóa quy trình, đặc tả chức năng và xác định tiêu chí nghiệm thu.</p></article>
+  </div>
+  <div style="margin-top:24px" class="two-col">
+   <div class="card"><h3>Vấn đề doanh nghiệp đang gặp phải</h3><ul><li>Hồ sơ được tiếp nhận qua nhiều kênh nên thông tin có thể thiếu hoặc không đồng nhất.</li><li>Nhân viên khó theo dõi hồ sơ đang ở bước nào và ai đang phụ trách.</li><li>Yêu cầu bổ sung chứng từ chưa được quản lý tập trung.</li><li>Khách hàng liên hệ nhiều lần để hỏi trạng thái xử lý.</li></ul><p class="small">Các vấn đề trên là giả định để minh họa bài toán; cần kiểm chứng bằng phỏng vấn stakeholder và dữ liệu thực tế.</p></div>
+   <div class="card"><h3>Giải pháp đề xuất</h3><ul><li>Chuẩn hóa form tiếp nhận và kiểm tra trường bắt buộc.</li><li>Cấp mã hồ sơ duy nhất để tra cứu.</li><li>Quản lý trạng thái và người phụ trách theo từng bước.</li><li>Ghi nhận yêu cầu bổ sung chứng từ và thời hạn phản hồi.</li><li>Cung cấp màn hình tra cứu tiến độ cho nhân viên và khách hàng theo phân quyền.</li></ul></div>
+  </div>
+  <div class="callout" style="margin-top:20px"><strong>Success metrics đề xuất:</strong> tỷ lệ hồ sơ thiếu chứng từ khi tiếp nhận, thời gian xử lý trung bình, số lần khách hàng hỏi trạng thái và tỷ lệ hồ sơ quá hạn. Không đặt số mục tiêu khi chưa có baseline.</div>
+ </div>
+</section>
+
+<section class="section" id="deliverables">
+ <div class="container">
+  <div class="section-head"><div class="kicker">02 / Deliverables</div><h2>Bộ sản phẩm BA trong case study</h2><p>Portfolio được tổ chức theo trình tự làm việc: hiểu vấn đề → phân tích yêu cầu → thiết kế giải pháp → xác nhận yêu cầu.</p></div>
+  <div class="grid-3">
+   <article class="card"><span class="pill blue">Business analysis</span><h3>BRD</h3><p>Bối cảnh, business problem, objectives, scope, stakeholder, business requirements, assumptions và risks.</p></article>
+   <article class="card"><span class="pill blue">System analysis</span><h3>FRD</h3><p>Chức năng hệ thống, input/output, business rules, validation, exception flows và trạng thái hồ sơ.</p></article>
+   <article class="card"><span class="pill blue">Process modeling</span><h3>Workflow & Diagram</h3><p>AS-IS/TO-BE, workflow xử lý hồ sơ và Use Case Diagram.</p></article>
+   <article class="card"><span class="pill blue">UX / UI</span><h3>Wireframe</h3><p>Khung giao diện tiếp nhận hồ sơ với các trường thông tin chính và hành động.</p></article>
+   <article class="card"><span class="pill blue">Prototype</span><h3>Interactive demo</h3><p>Thử nhập hồ sơ ngay trên website để minh họa luồng cơ bản và kiểm tra dữ liệu bắt buộc.</p></article>
+   <article class="card"><span class="pill blue">Agile delivery</span><h3>User Story & AC</h3><p>User story theo vai trò người dùng, Acceptance Criteria theo Given–When–Then và ma trận truy vết.</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="section section-white" id="requirements">
+ <div class="container">
+  <div class="section-head"><div class="kicker">03 / Requirements</div><h2>BRD & FRD — Từ nhu cầu đến chức năng</h2><p>Các yêu cầu dưới đây là bản nháp minh họa, cần được xác nhận với stakeholder trong dự án thực tế.</p></div>
+  <h3>Business Requirements (BRD)</h3>
+  <div class="table-wrap"><table><thead><tr><th>ID</th><th>Yêu cầu nghiệp vụ</th><th>Lý do</th><th>Ưu tiên</th></tr></thead><tbody>
+  <tr><td>BR-01</td><td>Chuẩn hóa việc tiếp nhận hồ sơ bồi thường.</td><td>Giảm thiếu thông tin và nhập liệu không nhất quán.</td><td><span class="pill blue">Must</span></td></tr>
+  <tr><td>BR-02</td><td>Cho phép tra cứu hồ sơ bằng mã hồ sơ.</td><td>Giảm thời gian tìm kiếm và hỏi đáp thủ công.</td><td><span class="pill blue">Must</span></td></tr>
+  <tr><td>BR-03</td><td>Theo dõi trạng thái và người phụ trách hồ sơ.</td><td>Tăng tính minh bạch và khả năng quản lý.</td><td><span class="pill blue">Must</span></td></tr>
+  <tr><td>BR-04</td><td>Quản lý yêu cầu bổ sung chứng từ.</td><td>Tránh thất lạc yêu cầu và thiếu lịch sử trao đổi.</td><td><span class="pill blue">Must</span></td></tr>
+  <tr><td>BR-05</td><td>Cung cấp báo cáo vận hành cơ bản.</td><td>Hỗ trợ quản lý theo dõi khối lượng và hồ sơ quá hạn.</td><td><span class="pill">Should</span></td></tr>
+  </tbody></table></div>
+  <h3 style="margin-top:30px">Functional Requirements (FRD)</h3>
+  <div class="table-wrap"><table><thead><tr><th>ID</th><th>Chức năng</th><th>Mô tả hành vi mong đợi</th><th>Liên kết BR</th></tr></thead><tbody>
+  <tr><td>FR-01</td><td>Tiếp nhận hồ sơ</td><td>Cho phép nhân viên nhập thông tin người yêu cầu, hợp đồng, loại sự kiện và ngày xảy ra.</td><td>BR-01</td></tr>
+  <tr><td>FR-02</td><td>Validate dữ liệu</td><td>Kiểm tra trường bắt buộc, định dạng và logic dữ liệu cơ bản.</td><td>BR-01</td></tr>
+  <tr><td>FR-03</td><td>Tạo mã hồ sơ</td><td>Tạo mã định danh duy nhất sau khi hồ sơ được ghi nhận thành công.</td><td>BR-02</td></tr>
+  <tr><td>FR-04</td><td>Quản lý trạng thái</td><td>Cho phép cập nhật trạng thái theo quy trình và ghi nhận lịch sử thay đổi.</td><td>BR-03</td></tr>
+  <tr><td>FR-05</td><td>Yêu cầu bổ sung</td><td>Ghi nhận loại chứng từ cần bổ sung, ngày yêu cầu và trạng thái phản hồi.</td><td>BR-04</td></tr>
+  <tr><td>FR-06</td><td>Tra cứu hồ sơ</td><td>Tìm kiếm theo mã hồ sơ và chỉ hiển thị dữ liệu theo quyền truy cập.</td><td>BR-02, BR-03</td></tr>
+  <tr><td>FR-07</td><td>Báo cáo vận hành</td><td>Tổng hợp số lượng hồ sơ theo trạng thái và nhóm thời gian.</td><td>BR-05</td></tr>
+  </tbody></table></div>
+  <div class="callout" style="margin-top:18px"><strong>Business rules mẫu:</strong> hồ sơ phải có mã duy nhất; không thể gửi tiếp nếu thiếu trường bắt buộc; chỉ vai trò có quyền mới được thay đổi trạng thái; mọi thay đổi trạng thái cần lưu người thực hiện và thời điểm.</div>
+ </div>
+</section>
+
+<section class="section" id="process">
+ <div class="container">
+  <div class="section-head"><div class="kicker">04 / Process modeling</div><h2>Workflow xử lý hồ sơ bảo hiểm</h2><p>Luồng TO-BE minh họa quy trình từ tiếp nhận đến hoàn tất. Nhánh quyết định và quy định SLA cần được xác nhận theo sản phẩm bảo hiểm thực tế.</p></div>
+  <div class="diagram-box">
+   <div class="flow">
+    <div class="flow-step"><strong>1. Tiếp nhận hồ sơ</strong><small>Nhân viên nhập thông tin và chứng từ ban đầu</small></div><div class="arrow">↓</div>
+    <div class="flow-step"><strong>2. Kiểm tra tính đầy đủ</strong><small>Kiểm tra trường bắt buộc và danh mục chứng từ</small></div><div class="arrow">↓</div>
+    <div class="branch"><div class="bad"><strong>Chưa đầy đủ</strong><br/>Gửi yêu cầu bổ sung</div><div class="good"><strong>Đầy đủ</strong><br/>Chuyển thẩm định</div></div><div class="arrow">↓</div>
+    <div class="flow-step"><strong>3. Thẩm định hồ sơ</strong><small>Chuyên viên đánh giá theo quy tắc nghiệp vụ</small></div><div class="arrow">↓</div>
+    <div class="branch"><div class="bad"><strong>Cần làm rõ</strong><br/>Yêu cầu bổ sung / xác minh</div><div class="good"><strong>Đủ điều kiện xem xét</strong><br/>Đề xuất kết quả</div></div><div class="arrow">↓</div>
+    <div class="flow-step"><strong>4. Phê duyệt theo thẩm quyền</strong><small>Phê duyệt, từ chối hoặc yêu cầu xem xét thêm</small></div><div class="arrow">↓</div>
+    <div class="flow-step"><strong>5. Thông báo kết quả & đóng hồ sơ</strong><small>Cập nhật trạng thái, lưu lịch sử và thông báo phù hợp</small></div>
+   </div>
+  </div>
+  <h3 style="margin-top:30px">Use Case Diagram (mô phỏng)</h3>
+  <div class="diagram-box usecase">
+   <div class="actor"><div class="person">♙</div>Nhân viên tiếp nhận</div>
+   <div class="system-boundary"><div class="usecase-oval">Tạo hồ sơ bồi thường</div><div class="usecase-oval">Kiểm tra chứng từ</div><div class="usecase-oval">Cập nhật trạng thái</div><div class="usecase-oval">Tra cứu hồ sơ</div><div class="usecase-oval">Ghi nhận bổ sung chứng từ</div></div>
+   <div class="actor"><div class="person">♙</div>Chuyên viên thẩm định</div>
+  </div>
+ </div>
+</section>
+
+<section class="section section-white" id="design">
+ <div class="container">
+  <div class="section-head"><div class="kicker">05 / Wireframe & prototype</div><h2>Prototype tương tác: Tiếp nhận hồ sơ</h2><p>Thử nghiệm form minh họa bên dưới. Đây là prototype frontend, chưa kết nối backend và không lưu dữ liệu thật.</p></div>
+  <div class="two-col">
+   <div class="card">
+    <h3>Mục tiêu thiết kế</h3>
+    <ul><li>Nhóm thông tin theo từng phần để nhân viên dễ nhập.</li><li>Đánh dấu trường bắt buộc và thông báo lỗi cạnh thao tác.</li><li>Giảm sai sót nhờ kiểm tra dữ liệu cơ bản.</li><li>Hiển thị mã hồ sơ demo sau khi tạo thành công.</li></ul>
+    <div class="tag-row"><span class="pill">Required-field validation</span><span class="pill">Inline feedback</span><span class="pill">Responsive</span></div>
+    <div class="callout" style="margin-top:18px"><strong>Design note:</strong> Form thực tế cần điều chỉnh theo loại bảo hiểm, quy định hồ sơ, phân quyền và chính sách bảo mật dữ liệu cá nhân.</div>
+   </div>
+   <div class="wireframe">
+    <div class="wf-head"><span>＋ Tiếp nhận hồ sơ</span><span style="font-size:.78rem;color:#64748b">Bản demo</span></div>
+    <form id="claimForm">
+     <div class="field"><label for="claimant">Họ tên người yêu cầu *</label><input id="claimant" name="claimant" placeholder="Ví dụ: Nguyễn Văn A" /></div>
+     <div class="field"><label for="policy">Mã hợp đồng bảo hiểm *</label><input id="policy" name="policy" placeholder="Ví dụ: POL-2026-001" /></div>
+     <div class="field"><label for="type">Loại hồ sơ *</label><select id="type" name="type"><option value="">Chọn loại hồ sơ</option><option>Sức khỏe</option><option>Xe cơ giới</option><option>Tài sản</option><option>Du lịch</option></select></div>
+     <div class="field"><label for="incidentDate">Ngày xảy ra sự kiện *</label><input id="incidentDate" name="incidentDate" type="date" /></div>
+     <div class="field"><label for="description">Mô tả sự kiện</label><textarea id="description" rows="3" name="description" placeholder="Mô tả ngắn gọn (không nhập dữ liệu nhạy cảm thật)"></textarea></div>
+     <button class="btn btn-primary wf-btn" type="submit">Kiểm tra & tạo hồ sơ demo</button>
+     <div id="formStatus" class="prototype-status" aria-live="polite">Điền các trường bắt buộc để thử prototype.</div>
+    </form>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="stories">
+ <div class="container">
+  <div class="section-head"><div class="kicker">06 / Agile requirements</div><h2>User Stories & Acceptance Criteria</h2><p>Ví dụ viết theo góc nhìn người dùng, có điều kiện đầu vào và kết quả mong đợi có thể kiểm thử.</p></div>
+  <div class="grid-2">
+   <article class="card req-card"><span class="pill blue">US-01 · Must</span><h3>Tiếp nhận hồ sơ mới</h3><p><strong>Với vai trò</strong> nhân viên tiếp nhận, tôi muốn tạo hồ sơ bảo hiểm mới, để ghi nhận yêu cầu xử lý vào hệ thống.</p><ol class="ac"><li><strong>Given</strong> nhân viên đang ở màn hình tiếp nhận, <strong>When</strong> gửi form thiếu trường bắt buộc, <strong>Then</strong> hệ thống hiển thị lỗi và không tạo hồ sơ.</li><li><strong>Given</strong> thông tin hợp lệ, <strong>When</strong> nhân viên xác nhận tạo hồ sơ, <strong>Then</strong> hệ thống tạo mã hồ sơ duy nhất và hiển thị kết quả.</li><li><strong>Given</strong> hồ sơ được tạo thành công, <strong>Then</strong> hệ thống ghi nhận người tạo và thời điểm tạo.</li></ol></article>
+   <article class="card req-card"><span class="pill blue">US-02 · Must</span><h3>Tra cứu trạng thái hồ sơ</h3><p><strong>Với vai trò</strong> nhân viên nghiệp vụ, tôi muốn tra cứu trạng thái hồ sơ theo mã, để biết tiến độ xử lý hiện tại.</p><ol class="ac"><li><strong>Given</strong> mã hồ sơ tồn tại và người dùng có quyền, <strong>When</strong> thực hiện tìm kiếm, <strong>Then</strong> hệ thống hiển thị trạng thái và thông tin được phép xem.</li><li><strong>Given</strong> mã hồ sơ không tồn tại, <strong>When</strong> tìm kiếm, <strong>Then</strong> hệ thống hiển thị thông báo không tìm thấy hồ sơ.</li><li><strong>Given</strong> người dùng không có quyền, <strong>Then</strong> hệ thống không tiết lộ dữ liệu hồ sơ.</li></ol></article>
+   <article class="card req-card"><span class="pill">US-03 · Should</span><h3>Yêu cầu bổ sung chứng từ</h3><p><strong>Với vai trò</strong> chuyên viên thẩm định, tôi muốn ghi nhận chứng từ cần bổ sung, để khách hàng biết rõ thông tin còn thiếu.</p><ol class="ac"><li>Không thể gửi yêu cầu nếu chưa chọn loại chứng từ hoặc nhập nội dung cần bổ sung.</li><li>Hệ thống lưu người tạo, thời điểm và trạng thái yêu cầu.</li><li>Hồ sơ được cập nhật sang trạng thái phù hợp theo quy trình đã thống nhất.</li></ol></article>
+   <article class="card req-card"><span class="pill">US-04 · Should</span><h3>Xem danh sách hồ sơ</h3><p><strong>Với vai trò</strong> quản lý nghiệp vụ, tôi muốn lọc hồ sơ theo trạng thái, để ưu tiên công việc cần xử lý.</p><ol class="ac"><li>Người dùng có thể lọc theo các trạng thái được cấp quyền xem.</li><li>Kết quả hiển thị mã hồ sơ, ngày tiếp nhận, trạng thái và người phụ trách theo quyền.</li><li>Khi không có kết quả phù hợp, hệ thống hiển thị trạng thái rỗng dễ hiểu.</li></ol></article>
+  </div>
+ </div>
+</section>
+
+<section class="section section-white" id="traceability">
+ <div class="container">
+  <div class="section-head"><div class="kicker">07 / Traceability</div><h2>Ma trận truy vết yêu cầu (RTM)</h2><p>RTM giúp kết nối nhu cầu kinh doanh với chức năng và tiêu chí nghiệm thu để hạn chế bỏ sót yêu cầu.</p></div>
+  <div class="table-wrap"><table><thead><tr><th>Business Req.</th><th>Functional Req.</th><th>User Story</th><th>Acceptance Criteria</th></tr></thead><tbody>
+  <tr><td>BR-01</td><td>FR-01, FR-02</td><td>US-01</td><td>US-01 AC-01, AC-02</td></tr>
+  <tr><td>BR-02</td><td>FR-03, FR-06</td><td>US-02</td><td>US-02 AC-01, AC-02</td></tr>
+  <tr><td>BR-03</td><td>FR-04, FR-06</td><td>US-02</td><td>US-02 AC-01, AC-03</td></tr>
+  <tr><td>BR-04</td><td>FR-05</td><td>US-03</td><td>US-03 AC-01–03</td></tr>
+  <tr><td>BR-05</td><td>FR-07</td><td>US-04</td><td>US-04 AC-01–03</td></tr>
+  </tbody></table></div>
+  <div class="grid-3" style="margin-top:22px">
+   <article class="card"><div class="iconbox">⚠️</div><h3>Risks</h3><p>Yêu cầu chưa thống nhất, quy trình phê duyệt phức tạp, dữ liệu nhạy cảm và phân quyền sai.</p></article>
+   <article class="card"><div class="iconbox">🔎</div><h3>Validation</h3><p>Review với stakeholder, walkthrough workflow, kiểm tra AC và xác nhận các trạng thái ngoại lệ.</p></article>
+   <article class="card"><div class="iconbox">📈</div><h3>Next steps</h3><p>Phỏng vấn người dùng, xác định SLA, chuẩn hóa status lifecycle, bổ sung test scenarios và usability test.</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="contact">
+ <div class="container">
+  <div class="section-head"><div class="kicker">08 / About & contact</div><h2>Xin chào, tôi là Châu.</h2><p>Tôi định hướng phát triển trong lĩnh vực Business Analysis, tập trung vào làm rõ yêu cầu, mô hình hóa quy trình và kết nối nhu cầu kinh doanh với giải pháp hệ thống.</p></div>
+  <div class="grid-3">
+   <article class="card"><div class="iconbox">📝</div><h3>Documentation</h3><p>BRD, FRD, User Story, Acceptance Criteria và Requirement Traceability.</p></article>
+   <article class="card"><div class="iconbox">🔄</div><h3>Process Analysis</h3><p>AS-IS/TO-BE, workflow, xác định điểm nghẽn và nhánh ngoại lệ.</p></article>
+   <article class="card"><div class="iconbox">🖥️</div><h3>System Thinking</h3><p>Wireframe, prototype, business rules và phối hợp cùng Developer/Tester.</p></article>
+  </div>
+  <div class="callout" style="margin-top:24px"><strong>Trước khi public:</strong> thay thông tin giới thiệu bằng kinh nghiệm và công cụ bạn thực sự sử dụng; thêm email/LinkedIn/GitHub của bạn; kiểm tra mọi nội dung để phân biệt rõ dự án mô phỏng với kinh nghiệm thực tế.</div>
+ </div>
+</section>
+<footer class="footer"><div class="container footer-row"><div><strong>BA Portfolio · Insurance Claims</strong><p>Case study mô phỏng phục vụ học tập và ứng tuyển BA.</p></div><div><a href="#home" class="btn btn-secondary">Về đầu trang ↑</a></div></div></footer>
+<script>
+const form = document.getElementById('claimForm');
+const statusBox = document.getElementById('formStatus');
+form.addEventListener('submit', function(event){
+  event.preventDefault();
+  const claimant = document.getElementById('claimant').value.trim();
+  const policy = document.getElementById('policy').value.trim();
+  const type = document.getElementById('type').value;
+  const incidentDate = document.getElementById('incidentDate').value;
+  const missing = [];
+  if(!claimant) missing.push('Họ tên người yêu cầu');
+  if(!policy) missing.push('Mã hợp đồng bảo hiểm');
+  if(!type) missing.push('Loại hồ sơ');
+  if(!incidentDate) missing.push('Ngày xảy ra sự kiện');
+  if(missing.length){
+    statusBox.className = 'prototype-status error';
+    statusBox.textContent = 'Vui lòng bổ sung: ' + missing.join(', ') + '.';
+    return;
+  }
+  const datePart = new Date().toISOString().slice(0,10).replaceAll('-','');
+  const randomPart = Math.floor(1000 + Math.random()*9000);
+  const claimId = 'CLM-' + datePart + '-' + randomPart;
+  statusBox.className = 'prototype-status success';
+  statusBox.textContent = 'Tạo hồ sơ demo thành công! Mã hồ sơ: ' + claimId + '. Đây chỉ là dữ liệu minh họa, chưa được lưu vào hệ thống.';
+});
+</script>
+</body>
+</html>
